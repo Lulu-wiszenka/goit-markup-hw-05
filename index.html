@@ -55,7 +55,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button class="btn-hero" type="button">Заказать услугу</button>
+          <button class="btn-hero" type="button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
       <section class="advantages">
@@ -114,31 +114,36 @@
           <h2 class="normal-title">Чем мы занимаемся</h2>
           <ul class="services-list list-customization">
             <li class="services-list-item">
-              <img
-                class="services-list-img"
-                src="./img/section1/img1.jpg"
-                alt="Набирает код на клавиатуре"
-                width="370"
-                height="294"
-              />
+              <div class="thumb">
+                <img
+                  class="services-list-img"
+                  src="./img/section1/img1.jpg"
+                  alt="Набирает код на клавиатуре"
+                />
+                <div class="thumb-description">
+                  <p class="thumb-text">Десктопные приложения</p>
+                </div>
+              </div>
             </li>
             <li class="services-list-item">
-              <img
-                class="services-list-img"
-                src="./img/section1/img2.jpg"
-                alt="Работа над интерфейсом приложения"
-                width="370"
-                height="294"
-              />
+              <div class="thumb">
+                <img
+                  class="services-list-img"
+                  src="./img/section1/img2.jpg"
+                  alt="Работа над интерфейсом приложения"
+                />
+                <div class="thumb-description"><p class="thumb-text">Мобильные приложения</p></div>
+              </div>
             </li>
             <li class="services-list-item">
-              <img
-                class="services-list-img"
-                src="./img/section1/img3.jpg"
-                alt="Подбирает оттенок"
-                width="370"
-                height="294"
-              />
+              <div class="thumb">
+                <img
+                  class="services-list-img"
+                  src="./img/section1/img3.jpg"
+                  alt="Подбирает оттенок"
+                />
+                <div class="thumb-description"><p class="thumb-text">Дизайнерские решения</p></div>
+              </div>
             </li>
           </ul>
         </div>
@@ -438,5 +443,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close" type="button" data-modal-close>
+          <svg class="icon-close" width="18" height="18">
+            <use href="./img/sprit-icon.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
