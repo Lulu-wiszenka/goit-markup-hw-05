@@ -21,8 +21,6 @@
   --hover-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) */
-
 body {
   font-family: var(--text-main-font);
   font-weight: 400;
@@ -100,6 +98,7 @@ img {
 }
 
 .header-nav-list-item:not(:last-child) {
+  position: relative;
   margin-right: 50px;
 }
 
@@ -125,14 +124,16 @@ img {
 
 .header-nav-link.page {
   color: var(--accent-color-blue);
-  padding-bottom: 0;
 }
 
 .header-nav-link.page::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
   content: "";
+
   display: block;
-  margin-top: 28px;
-  max-width: 100%;
+  width: 100%;
   height: 4px;
   background-color: var(--accent-color-blue);
   border-radius: 2px;
@@ -227,7 +228,7 @@ img {
   line-height: 1.875;
   cursor: pointer;
   letter-spacing: 0.06em;
-  border: 2px solid var(--accent-color-blue);
+  border: 2px solid transparent;
   border-radius: 4px;
 
   transition: background-color 250ms var(--hover-cubic);
@@ -353,6 +354,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 27px; /*Не уверена насчёт боковых паддингов*/
   background: rgba(47, 48, 58, 0.8);
 }
 
@@ -621,7 +623,7 @@ img {
 .btn-portfolio:hover {
   color: var(--text-white-color);
   background-color: var(--accent-color-blue);
-  border: 2px solid transparent;
+
   border-radius: 4px;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -658,14 +660,41 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.work-examples-link:hover .hover-text-thumb,
+.work-examples-link:focus .hover-text-thumb {
+  transform: translateY(0);
+}
+
 .img-description {
   width: 100%;
   padding: 20px 24px;
 }
 
-.work-examples-img {
-  width: 370px;
+.img-examples-thumb {
+  position: relative;
+  width: 100%;
   height: 294px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--work-examples-border);
+  /* Задала нижнюю часть рамки, чтобы не было видно голубой полосочки */
+}
+
+.hover-text-thumb {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+
+  transition: transform 250ms var(--hover-cubic);
+}
+
+.hover-text {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--text-white-color);
 }
 
 .work-examples-title {
@@ -695,11 +724,17 @@ img {
   width: 100%;
   height: 1024px;
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transform: scale(1);
+  transition: all 250ms var(--hover-cubic);
 }
 
 .backdrop.is-hidden {
-  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+  opacity: 0;
+  transform: scale(0);
 }
 
 .modal {
@@ -707,7 +742,6 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   min-width: 528px;
   min-height: 581px;
 
@@ -734,6 +768,7 @@ img {
   background-color: var(--text-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  cursor: pointer;
 }
 .icon-close {
   fill: var(--just-black);
