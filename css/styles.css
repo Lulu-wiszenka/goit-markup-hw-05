@@ -354,7 +354,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 27px; /*Не уверена насчёт боковых паддингов*/
   background: rgba(47, 48, 58, 0.8);
 }
 
@@ -549,6 +548,13 @@ img {
   line-height: 1.714;
   letter-spacing: 0.03em;
   color: var(--footer-link-color);
+
+  transition: color 250ms var(--hover-cubic);
+}
+
+.footer-contacts-link:hover,
+.footer-contacts-link:focus {
+  color: var(--accent-color-blue);
 }
 
 .footer-contacts-link-address {
@@ -675,8 +681,6 @@ img {
   width: 100%;
   height: 294px;
   overflow: hidden;
-  border-bottom: 1px solid var(--work-examples-border);
-  /* Задала нижнюю часть рамки, чтобы не было видно голубой полосочки */
 }
 
 .hover-text-thumb {
@@ -685,7 +689,7 @@ img {
   bottom: 0;
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
-  transform: translateY(100%);
+  transform: translateY(101%);
 
   transition: transform 250ms var(--hover-cubic);
 }
@@ -718,7 +722,7 @@ img {
 
 /* ============ MODAL ============ */
 .backdrop {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
