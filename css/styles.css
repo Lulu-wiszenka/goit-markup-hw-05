@@ -345,7 +345,7 @@ img {
   height: 100%;
 }
 
-.thumb-description {
+.thumb-text {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -355,9 +355,7 @@ img {
   justify-content: center;
   align-items: center;
   background: rgba(47, 48, 58, 0.8);
-}
 
-.thumb-text {
   font-weight: 700;
   line-height: 1.143;
   letter-spacing: 0.03em;
@@ -447,6 +445,13 @@ img {
   transition: background-color 250ms var(--hover-cubic);
 }
 
+.icon-social {
+  width: 20px;
+  height: 20px;
+  fill: var(--icon-social-color);
+  transition: fill 250ms var(--hover-cubic);
+}
+
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color-blue);
@@ -455,13 +460,6 @@ img {
 .social-link:hover .icon-social,
 .social-link:focus .icon-social {
   fill: var(--text-white-color);
-}
-
-.icon-social {
-  width: 20px;
-  height: 20px;
-  fill: var(--icon-social-color);
-  transition: fill 250ms var(--hover-cubic);
 }
 
 /* ============ END TEAM ============ */
@@ -666,8 +664,8 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.work-examples-link:hover .hover-text-thumb,
-.work-examples-link:focus .hover-text-thumb {
+.work-examples-link:hover .hover-text,
+.work-examples-link:focus .hover-text {
   transform: translateY(0);
 }
 
@@ -683,7 +681,7 @@ img {
   overflow: hidden;
 }
 
-.hover-text-thumb {
+.hover-text {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -692,9 +690,7 @@ img {
   transform: translateY(101%);
 
   transition: transform 250ms var(--hover-cubic);
-}
 
-.hover-text {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
@@ -726,7 +722,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 1024px;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
